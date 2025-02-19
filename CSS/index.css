@@ -1,0 +1,327 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/SRC/OIP2.jpg');
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #080808;
+    position: relative;
+}
+
+#logopic {
+    height: 40px;
+    /* Adjust logo size */
+    width: auto;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    /* Visible by default for mobile */
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1000;
+    /* Ensure it's above the nav menu */
+}
+
+.hamburger .line {
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    margin: 2px 0;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    height: auto;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Semi-transparent black */
+    backdrop-filter: blur(3px);
+    /* Glass effect */
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-100%);
+    /* Hide off-screen by default */
+    transition: transform 0.3s ease-in-out;
+    z-index: -1;
+    /* Ensure it's below the hamburger */
+}
+
+.nav-links.active {
+    transform: translateY(0);
+    /* Slide in when active */
+}
+
+.nav-links li {
+    margin: 15px 0;
+    padding-left: 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    /* border-radius: 5px; */
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    /* Hover effect */
+}
+
+/* Desktop Styles (for larger screens) */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+        /* Hide hamburger on desktop */
+    }
+
+    .nav-links {
+        position: static;
+        height: auto;
+        width: auto;
+        background: transparent;
+        backdrop-filter: none;
+        /* Remove blur on desktop */
+        flex-direction: row;
+        transform: translateY(0);
+        /* Reset transform */
+    }
+
+    .nav-links li {
+        margin: 0 15px;
+    }
+}
+
+
+section,
+p {
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#mid-high {
+    text-align: center;
+    padding: 20px;
+}
+
+#mid-btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    /* Adds space between buttons */
+    margin-top: 20px;
+    flex-direction: column;
+
+
+}
+
+#mid-btn button {
+    padding: 10px 20px;
+    border: 1px solid rgb(233, 137, 137);
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: rgb(233, 137, 137);
+}
+
+#mid-btn button:hover {
+    /* background-color: black; */
+    color: white;
+    text-shadow: 0 0 5px white, 0 0 5px white, 0 0 5px white;
+}
+
+button a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#practice-areas {
+    /* max-width: 700px; */
+    width: 100%;
+    background-color: white;
+    justify-self: center;
+    color: black;
+}
+
+#practice-areas>div>div {
+    flex: 0 0 auto;
+    width: 80%;
+    max-width: fit-content;
+    min-width: 200px;
+    margin: 10px;
+    padding: 20px;
+    /* color: white; */
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#practice-areas button {
+    /* max-width: 300px; */
+    margin: 20px;
+    width: 300px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 30px;
+
+}
+
+#practice-areas button :hover {
+    box-shadow: 10px;
+}
+
+#mid-low>#content>article {
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    /* Transparent white background */
+    backdrop-filter: blur(10px);
+    /* Glass effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mid-low>#content>article:hover {
+    transform: scale(1.05);
+    /* Scale up by 10% */
+    z-index: 10;
+    /* Bring the element in front */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Enhance the shadow on hover */
+}
+#mid-low>#content>article a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+footer #media {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    padding: 0;
+}
+
+footer img {
+    width: 150px;
+    margin: 20px 0 10px 0;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 15px rgba(253, 255, 255, 0.2));
+    /* Glow effect */
+    transition: filter 0.3s ease;
+    /* Smooth transition */
+
+}
+
+footer img:hover {
+    filter: drop-shadow(0 0 25px rgba(0, 255, 255, 0.5));
+}
+
+#media img {
+    width: 25px;
+    height: 25px;
+    padding: 10px 20px;
+    margin: 0;
+    filter: grayscale(100%);
+}
+
+#media img:hover {
+    filter: none;
+    transform: scale(1.2);
+}
+
+h4 {
+    width: 80%;
+    font-size: small;
+    text-align: center;
+}
+
+#info {
+    display: none;
+}
+
+
+/* Medium devices (tablets) */
+
+@media screen and (min-width: 1024px) {
+    #mid-btn {
+        flex-direction: row;
+    }
+
+    #mid-btn button {
+        margin: 0 10px;
+    }
+
+    #practice-areas div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #practice-areas>div>div {
+        /* width: 30%; */
+        text-align: center;
+        font-size: x-large;
+    }
+
+    #mid-low {
+        background-color: white;
+        width: 70%;
+        margin-top: 100px;
+        justify-self: center;
+        color: #080808;
+        /* opacity: 0.7; */
+    }
+
+    #mid-low h1 {
+        font-size: xx-large;
+    }
+
+    .arc {
+        width: 70%;
+        color: black;
+        justify-self: center;
+    }
+}
