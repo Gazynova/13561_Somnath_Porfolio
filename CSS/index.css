@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('../SRC/OIP2.jpg');
+    background-image: url('./OIP2.jpg');
     color: white;
 }
 
